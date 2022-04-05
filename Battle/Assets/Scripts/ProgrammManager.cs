@@ -95,7 +95,13 @@ public class ProgrammManager : MonoBehaviour
                 selectedObject = GameObject.FindWithTag("Selected");
                 selectedObject.transform.position = hits[0].pose.position;
             }
-            
+            if (touch.phase == TouchPhase.Ended)
+            {
+                if (selectedObject.CompareTag("Selected"))
+                {
+                    selectedObject.tag = "Unselected";
+                }
+            }
         }
     }
 }
