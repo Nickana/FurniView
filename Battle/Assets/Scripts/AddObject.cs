@@ -10,18 +10,20 @@ public class AddObject : MonoBehaviour
     
     private ProgrammManager ProgrammManagerScript;
 
+    private textScript testText;
+    
     private void AddObjectFunction()
     {
-      
+       
         ProgrammManagerScript.chooseObject = false;
         ProgrammManagerScript.scrollView.SetActive(true);
+
     }
 
 
     void Start()
-    {
+    {     
         ProgrammManagerScript = FindObjectOfType<ProgrammManager>();
-
         button = GetComponent<Button>();
         button.onClick.AddListener(AddObjectFunction);
     }
